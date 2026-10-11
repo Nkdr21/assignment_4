@@ -1,0 +1,394 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Assignment 4: Forms and Validation</title>
+
+  <link rel="stylesheet"
+        href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+        integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH"
+        crossorigin="anonymous">
+</head>
+
+<body>
+  <div class="container py-4">
+
+    <h1>Assignment 4: Forms and Validation</h1>
+    <p class="text-secondary">Demo only. Data is not saved.</p>
+
+    <section>
+      <h2>Part 1. Basic HTML Forms</h2>
+      <p>Basic forms without Bootstrap form classes.</p>
+
+      <!-- Task 0 -->
+      <h3>Task 0. Simple Contact Form</h3>
+      <p class="small text-secondary">A contact form with labels and inputs.</p>
+
+      <form method="get">
+        <p>
+          <label for="task0-name">Name</label>
+          <input type="text" id="task0-name" name="name">
+        </p>
+
+        <p>
+          <label for="task0-email">Email</label>
+          <input type="email" id="task0-email" name="email">
+        </p>
+
+        <p>
+          <label for="task0-message">Message</label>
+          <textarea id="task0-message" name="message" rows="4"></textarea>
+        </p>
+
+        <button type="submit">Submit</button>
+      </form>
+
+      <hr>
+
+      <!-- Task 1 -->
+      <h3>Task 1. Form with HTML5 Validation</h3>
+      <p class="small text-secondary">Added required fields and text length limits.</p>
+      <p class="small">Test: submit empty fields or enter an invalid email.</p>
+
+      <form method="get">
+        <p>
+          <label for="task1-name">Name</label>
+          <input type="text" id="task1-name" name="name"
+                 required minlength="2" maxlength="50">
+        </p>
+
+        <p>
+          <label for="task1-email">Email</label>
+          <input type="email" id="task1-email" name="email"
+                 required maxlength="100">
+        </p>
+
+        <p>
+          <label for="task1-message">Message</label>
+          <textarea id="task1-message" name="message" rows="4"
+                    required minlength="10" maxlength="500"></textarea>
+        </p>
+
+        <button type="submit">Submit</button>
+      </form>
+    </section>
+
+    <hr class="my-5">
+
+    <section>
+      <h2>Part 2. Bootstrap Forms</h2>
+
+      <!-- Task 2 -->
+      <h3>Task 2. Bootstrap Form Styling</h3>
+      <p class="small text-secondary">
+        Added Bootstrap styling, grid, placeholders and helper text.
+      </p>
+
+      <form method="get">
+        <div class="row g-3">
+
+          <div class="col-md-6">
+            <label for="task2-name" class="form-label">Name</label>
+            <input type="text" class="form-control"
+                   id="task2-name" name="name"
+                   placeholder="Your full name"
+                   required minlength="2" maxlength="50"
+                   aria-describedby="task2-name-help">
+            <div id="task2-name-help" class="form-text">
+              Use 2 to 50 characters.
+            </div>
+          </div>
+
+          <div class="col-md-6">
+            <label for="task2-email" class="form-label">Email</label>
+            <input type="email" class="form-control"
+                   id="task2-email" name="email"
+                   placeholder="name@example.com"
+                   required maxlength="100"
+                   aria-describedby="task2-email-help">
+            <div id="task2-email-help" class="form-text">
+              Example: name@example.com.
+            </div>
+          </div>
+
+          <div class="col-12">
+            <label for="task2-message" class="form-label">Message</label>
+            <textarea class="form-control"
+                      id="task2-message" name="message" rows="4"
+                      placeholder="Write your message here"
+                      required minlength="10" maxlength="500"
+                      aria-describedby="task2-message-help"></textarea>
+            <div id="task2-message-help" class="form-text">
+              Use 10 to 500 characters.
+            </div>
+          </div>
+
+          <div class="col-12">
+            <button type="submit" class="btn btn-primary">Submit</button>
+          </div>
+
+        </div>
+      </form>
+
+      <hr>
+
+      <!-- Task 3 -->
+      <h3>Task 3. Bootstrap Validation Styles</h3>
+      <p class="small text-secondary">
+        Added validation colours and feedback messages.
+      </p>
+
+      <h4 class="h5">Automatic Feedback</h4>
+      <p class="small">
+        HTML5 checks the fields. Bootstrap shows red or green feedback.
+      </p>
+
+      <form class="was-validated" method="get">
+        <div class="row g-3">
+
+          <div class="col-md-6">
+            <label for="task3-name" class="form-label">Name</label>
+            <input type="text" class="form-control"
+                   id="task3-name" name="name"
+                   placeholder="Your full name"
+                   required minlength="2" maxlength="50">
+            <div class="valid-feedback">Looks good!</div>
+            <div class="invalid-feedback">
+              Enter a name with 2 to 50 characters.
+            </div>
+          </div>
+
+          <div class="col-md-6">
+            <label for="task3-email" class="form-label">Email</label>
+            <input type="email" class="form-control"
+                   id="task3-email" name="email"
+                   placeholder="name@example.com"
+                   required maxlength="100">
+            <div class="valid-feedback">Looks good!</div>
+            <div class="invalid-feedback">
+              Enter a valid email, up to 100 characters.
+            </div>
+          </div>
+
+          <div class="col-12">
+            <label for="task3-message" class="form-label">Message</label>
+            <textarea class="form-control"
+                      id="task3-message" name="message" rows="4"
+                      placeholder="Write your message here"
+                      required minlength="10" maxlength="500"></textarea>
+            <div class="valid-feedback">Looks good!</div>
+            <div class="invalid-feedback">
+              Enter a message with 10 to 500 characters.
+            </div>
+          </div>
+
+          <div class="col-12">
+            <button type="submit" class="btn btn-primary">Submit</button>
+          </div>
+
+        </div>
+      </form>
+
+      <h4 class="h5 mt-4">Validation Examples</h4>
+
+      <div class="mb-3">
+        <label for="task3-static-valid" class="form-label">
+          Valid email example
+        </label>
+        <input type="email" class="form-control is-valid"
+               id="task3-static-valid"
+               value="name@example.com" readonly>
+        <div class="valid-feedback">Looks good!</div>
+      </div>
+
+      <div class="mb-3">
+        <label for="task3-static-invalid" class="form-label">
+          Invalid email example
+        </label>
+        <input type="email" class="form-control is-invalid"
+               id="task3-static-invalid"
+               value="abc" readonly>
+        <div class="invalid-feedback">
+          Enter a valid email address.
+        </div>
+      </div>
+
+    </section>
+
+    <hr class="my-5">
+
+    <section>
+      <h2>Part 3. Advanced Form Project</h2>
+
+      <!-- Task 4 -->
+      <h3>Task 4. Registration Form</h3>
+      <p class="small text-secondary">
+        A responsive registration form with validation.
+        Hobbies are optional.
+      </p>
+
+      <form method="post">
+        <div class="row g-3">
+
+          <!-- First Name -->
+          <div class="col-md-6 was-validated">
+            <label for="task4-first-name" class="form-label">First Name</label>
+            <input type="text" class="form-control"
+                   id="task4-first-name" name="first_name"
+                   placeholder="First name"
+                   required minlength="2" maxlength="30">
+            <div class="valid-feedback">Looks good!</div>
+            <div class="invalid-feedback">
+              Enter a first name with 2 to 30 characters.
+            </div>
+          </div>
+
+          <!-- Last Name -->
+          <div class="col-md-6 was-validated">
+            <label for="task4-last-name" class="form-label">Last Name</label>
+            <input type="text" class="form-control"
+                   id="task4-last-name" name="last_name"
+                   placeholder="Last name"
+                   required minlength="2" maxlength="30">
+            <div class="valid-feedback">Looks good!</div>
+            <div class="invalid-feedback">
+              Enter a last name with 2 to 30 characters.
+            </div>
+          </div>
+
+          <!-- Email -->
+          <div class="col-12 was-validated">
+            <label for="task4-email" class="form-label">Email</label>
+            <input type="email" class="form-control"
+                   id="task4-email" name="email"
+                   placeholder="name@example.com"
+                   required maxlength="100">
+            <div class="valid-feedback">Looks good!</div>
+            <div class="invalid-feedback">
+              Enter a valid email, up to 100 characters.
+            </div>
+          </div>
+
+          <!-- Password -->
+          <div class="col-md-6 was-validated">
+            <label for="task4-password" class="form-label">Password</label>
+            <input type="password" class="form-control"
+                   id="task4-password" name="password"
+                   placeholder="At least 8 characters"
+                   required minlength="8" maxlength="30"
+                   autocomplete="new-password">
+            <div class="valid-feedback">Password length is OK.</div>
+            <div class="invalid-feedback">
+              Use 8 to 30 characters.
+            </div>
+          </div>
+
+          <!-- Confirm Password -->
+          <div class="col-md-6 was-validated">
+            <label for="task4-confirm-password" class="form-label">
+              Confirm Password
+            </label>
+            <input type="password" class="form-control"
+                   id="task4-confirm-password" name="confirm_password"
+                   placeholder="Repeat your password"
+                   required minlength="8" maxlength="30"
+                   autocomplete="new-password">
+            <div class="valid-feedback">
+              Length is OK. Check that it matches the password.
+            </div>
+            <div class="invalid-feedback">
+              Repeat your password using 8 to 30 characters.
+            </div>
+          </div>
+
+          <!-- Gender -->
+          <div class="col-md-6 was-validated">
+            <fieldset>
+              <legend class="col-form-label pt-0">Gender</legend>
+
+              <div class="form-check">
+                <input class="form-check-input" type="radio"
+                       name="gender" id="task4-gender-male"
+                       value="male" required>
+                <label class="form-check-label" for="task4-gender-male">Male</label>
+              </div>
+
+              <div class="form-check">
+                <input class="form-check-input" type="radio"
+                       name="gender" id="task4-gender-female"
+                       value="female" required>
+                <label class="form-check-label" for="task4-gender-female">Female</label>
+              </div>
+
+              <div class="form-check">
+                <input class="form-check-input" type="radio"
+                       name="gender" id="task4-gender-other"
+                       value="other" required>
+                <label class="form-check-label" for="task4-gender-other">Other</label>
+                <div class="invalid-feedback">
+                  Please choose one option.
+                </div>
+              </div>
+            </fieldset>
+          </div>
+
+          <!-- Hobbies (optional, no validation) -->
+          <div class="col-md-6">
+            <fieldset>
+              <legend class="col-form-label pt-0">Hobbies (optional)</legend>
+
+              <div class="form-check">
+                <input class="form-check-input" type="checkbox"
+                       name="hobbies" id="task4-hobby-reading" value="reading">
+                <label class="form-check-label" for="task4-hobby-reading">Reading</label>
+              </div>
+
+              <div class="form-check">
+                <input class="form-check-input" type="checkbox"
+                       name="hobbies" id="task4-hobby-sports" value="sports">
+                <label class="form-check-label" for="task4-hobby-sports">Sports</label>
+              </div>
+
+              <div class="form-check">
+                <input class="form-check-input" type="checkbox"
+                       name="hobbies" id="task4-hobby-music" value="music">
+                <label class="form-check-label" for="task4-hobby-music">Music</label>
+              </div>
+
+              <div class="form-check">
+                <input class="form-check-input" type="checkbox"
+                       name="hobbies" id="task4-hobby-travel" value="travel">
+                <label class="form-check-label" for="task4-hobby-travel">Travel</label>
+              </div>
+            </fieldset>
+          </div>
+
+          <!-- Country -->
+          <div class="col-md-6 was-validated">
+            <label for="task4-country" class="form-label">Country</label>
+            <select class="form-select" id="task4-country" name="country" required>
+              <option value="" selected>Choose a country</option>
+              <option value="kazakhstan">Kazakhstan</option>
+              <option value="kyrgyzstan">Kyrgyzstan</option>
+              <option value="uzbekistan">Uzbekistan</option>
+              <option value="turkey">Turkey</option>
+              <option value="usa">United States</option>
+            </select>
+            <div class="valid-feedback">Looks good!</div>
+            <div class="invalid-feedback">Please choose a country.</div>
+          </div>
+
+          <!-- Buttons -->
+          <div class="col-12">
+            <button type="submit" class="btn btn-primary">Submit</button>
+            <button type="reset" class="btn btn-outline-secondary ms-2">Reset</button>
+          </div>
+
+        </div>
+      </form>
+    </section>
+
+  </div>
+</body>
+</html>
