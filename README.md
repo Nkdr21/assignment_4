@@ -16,3 +16,7 @@
 
 ### I created a registration form with name, email, password, and confirm password fields. I added radio buttons for gender, checkboxes for hobbies, and a dropdown for country. I used Bootstrap Grid to make the layout responsive. Required fields and password length are checked using HTML5 validation. Bootstrap shows error and success messages. The Reset button clears the form. The password fields check length only, not whether the passwords match.
 <img width="1440" height="855" alt="image" src="https://github.com/user-attachments/assets/a6ee8946-576e-456f-9600-74538035d30c" />
+
+## Summary
+
+In this assignment, I learned how to create and style HTML forms using HTML5 and Bootstrap. I practiced using different input types, labels, validation attributes, and feedback messages. I also used Bootstrap Grid to make my forms responsive on different screen sizes. Finally, I created a registration form with different input fields and a reset button. This assignment helped me better understand how forms work and how to make them user-friendly.
