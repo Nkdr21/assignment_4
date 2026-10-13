@@ -4,87 +4,94 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Assignment 4: Forms and Validation</title>
-
   <link rel="stylesheet"
         href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
         integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH"
         crossorigin="anonymous">
+  <style>
+    body { background-color: #f5f7fb; color: #26354a; }
+    .container { max-width: 900px; }
+    section {
+      background-color: white;
+      border: 1px solid #e3e8ef;
+      border-radius: 12px;
+      padding: 24px;
+      margin: 24px 0;
+    }
+    h1 { font-size: 30px; font-weight: 700; }
+    h2 { font-size: 23px; margin-bottom: 18px; }
+    h3 { font-size: 19px; margin-top: 20px; }
+    .form-control, .form-select, .btn { border-radius: 7px; }
+    section:first-of-type input, section:first-of-type textarea {
+      padding: 8px;
+      border: 1px solid #cbd5e1;
+      border-radius: 6px;
+      max-width: 100%;
+    }
+    section:first-of-type button {
+      background-color: #0d6efd;
+      color: white;
+      border: 0;
+      border-radius: 6px;
+      padding: 8px 18px;
+    }
+  </style>
 </head>
-
 <body>
   <div class="container py-4">
-
     <h1>Assignment 4: Forms and Validation</h1>
     <p class="text-secondary">Demo only. Data is not saved.</p>
-
     <section>
       <h2>Part 1. Basic HTML Forms</h2>
       <p>Basic forms without Bootstrap form classes.</p>
-
       <h3>Task 0. Simple Contact Form</h3>
       <p class="small text-secondary">A contact form with labels and inputs.</p>
-
-      <form method="get">
+      <form>
         <p>
           <label for="task0-name">Name</label>
           <input type="text" id="task0-name" name="name">
         </p>
-
         <p>
           <label for="task0-email">Email</label>
           <input type="email" id="task0-email" name="email">
         </p>
-
         <p>
           <label for="task0-message">Message</label>
           <textarea id="task0-message" name="message" rows="4"></textarea>
         </p>
-
         <button type="submit">Submit</button>
       </form>
-
       <hr>
-
       <h3>Task 1. Form with HTML5 Validation</h3>
       <p class="small text-secondary">Added required fields and text length limits.</p>
       <p class="small">Test: submit empty fields or enter an invalid email.</p>
-
-      <form method="get">
+      <form>
         <p>
           <label for="task1-name">Name</label>
           <input type="text" id="task1-name" name="name"
                  required minlength="2" maxlength="50">
         </p>
-
         <p>
           <label for="task1-email">Email</label>
           <input type="email" id="task1-email" name="email"
                  required maxlength="100">
         </p>
-
         <p>
           <label for="task1-message">Message</label>
           <textarea id="task1-message" name="message" rows="4"
                     required minlength="10" maxlength="500"></textarea>
         </p>
-
         <button type="submit">Submit</button>
       </form>
     </section>
-
-    <hr class="my-5">
-
     <section>
       <h2>Part 2. Bootstrap Forms</h2>
-
       <h3>Task 2. Bootstrap Form Styling</h3>
       <p class="small text-secondary">
         Added Bootstrap styling, grid, placeholders and helper text.
       </p>
-
-      <form method="get">
+      <form>
         <div class="row g-3">
-
           <div class="col-md-6">
             <label for="task2-name" class="form-label">Name</label>
             <input type="text" class="form-control"
@@ -96,7 +103,6 @@
               Use 2 to 50 characters.
             </div>
           </div>
-
           <div class="col-md-6">
             <label for="task2-email" class="form-label">Email</label>
             <input type="email" class="form-control"
@@ -108,7 +114,6 @@
               Example: name@example.com.
             </div>
           </div>
-
           <div class="col-12">
             <label for="task2-message" class="form-label">Message</label>
             <textarea class="form-control"
@@ -120,29 +125,21 @@
               Use 10 to 500 characters.
             </div>
           </div>
-
           <div class="col-12">
             <button type="submit" class="btn btn-primary">Submit</button>
           </div>
-
         </div>
       </form>
-
       <hr>
-
       <h3>Task 3. Bootstrap Validation Styles</h3>
       <p class="small text-secondary">
         Added validation colours and feedback messages.
       </p>
-
-      <h4 class="h5">Automatic Feedback</h4>
       <p class="small">
         HTML5 checks the fields. Bootstrap shows red or green feedback.
       </p>
-
-      <form class="was-validated" method="get">
+      <form class="needs-validation" novalidate>
         <div class="row g-3">
-
           <div class="col-md-6">
             <label for="task3-name" class="form-label">Name</label>
             <input type="text" class="form-control"
@@ -154,7 +151,6 @@
               Enter a name with 2 to 50 characters.
             </div>
           </div>
-
           <div class="col-md-6">
             <label for="task3-email" class="form-label">Email</label>
             <input type="email" class="form-control"
@@ -166,7 +162,6 @@
               Enter a valid email, up to 100 characters.
             </div>
           </div>
-
           <div class="col-12">
             <label for="task3-message" class="form-label">Message</label>
             <textarea class="form-control"
@@ -178,55 +173,22 @@
               Enter a message with 10 to 500 characters.
             </div>
           </div>
-
           <div class="col-12">
             <button type="submit" class="btn btn-primary">Submit</button>
           </div>
-
         </div>
       </form>
-
-      <h4 class="h5 mt-4">Validation Examples</h4>
-
-      <div class="mb-3">
-        <label for="task3-static-valid" class="form-label">
-          Valid email example
-        </label>
-        <input type="email" class="form-control is-valid"
-               id="task3-static-valid"
-               value="name@example.com" readonly>
-        <div class="valid-feedback">Looks good!</div>
-      </div>
-
-      <div class="mb-3">
-        <label for="task3-static-invalid" class="form-label">
-          Invalid email example
-        </label>
-        <input type="email" class="form-control is-invalid"
-               id="task3-static-invalid"
-               value="abc" readonly>
-        <div class="invalid-feedback">
-          Enter a valid email address.
-        </div>
-      </div>
-
     </section>
-
-    <hr class="my-5">
-
     <section>
       <h2>Part 3. Advanced Form Project</h2>
-
       <h3>Task 4. Registration Form</h3>
       <p class="small text-secondary">
         A responsive registration form with validation.
         Hobbies are optional.
       </p>
-
-      <form method="post">
+      <form  class="needs-validation" id="registrationForm" novalidate>
         <div class="row g-3">
-
-          <div class="col-md-6 was-validated">
+          <div class="col-md-6">
             <label for="task4-first-name" class="form-label">First Name</label>
             <input type="text" class="form-control"
                    id="task4-first-name" name="first_name"
@@ -237,8 +199,7 @@
               Enter a first name with 2 to 30 characters.
             </div>
           </div>
-
-          <div class="col-md-6 was-validated">
+          <div class="col-md-6">
             <label for="task4-last-name" class="form-label">Last Name</label>
             <input type="text" class="form-control"
                    id="task4-last-name" name="last_name"
@@ -249,8 +210,7 @@
               Enter a last name with 2 to 30 characters.
             </div>
           </div>
-
-          <div class="col-12 was-validated">
+          <div class="col-12">
             <label for="task4-email" class="form-label">Email</label>
             <input type="email" class="form-control"
                    id="task4-email" name="email"
@@ -261,8 +221,7 @@
               Enter a valid email, up to 100 characters.
             </div>
           </div>
-
-          <div class="col-md-6 was-validated">
+          <div class="col-md-6">
             <label for="task4-password" class="form-label">Password</label>
             <input type="password" class="form-control"
                    id="task4-password" name="password"
@@ -274,8 +233,7 @@
               Use 8 to 30 characters.
             </div>
           </div>
-
-          <div class="col-md-6 was-validated">
+          <div class="col-md-6">
             <label for="task4-confirm-password" class="form-label">
               Confirm Password
             </label>
@@ -291,25 +249,21 @@
               Repeat your password using 8 to 30 characters.
             </div>
           </div>
-
-          <div class="col-md-6 was-validated">
+          <div class="col-md-6">
             <fieldset>
               <legend class="col-form-label pt-0">Gender</legend>
-
               <div class="form-check">
                 <input class="form-check-input" type="radio"
                        name="gender" id="task4-gender-male"
                        value="male" required>
                 <label class="form-check-label" for="task4-gender-male">Male</label>
               </div>
-
               <div class="form-check">
                 <input class="form-check-input" type="radio"
                        name="gender" id="task4-gender-female"
                        value="female" required>
                 <label class="form-check-label" for="task4-gender-female">Female</label>
               </div>
-
               <div class="form-check">
                 <input class="form-check-input" type="radio"
                        name="gender" id="task4-gender-other"
@@ -321,29 +275,24 @@
               </div>
             </fieldset>
           </div>
-
           <div class="col-md-6">
             <fieldset>
               <legend class="col-form-label pt-0">Hobbies (optional)</legend>
-
               <div class="form-check">
                 <input class="form-check-input" type="checkbox"
                        name="hobbies" id="task4-hobby-reading" value="reading">
                 <label class="form-check-label" for="task4-hobby-reading">Reading</label>
               </div>
-
               <div class="form-check">
                 <input class="form-check-input" type="checkbox"
                        name="hobbies" id="task4-hobby-sports" value="sports">
                 <label class="form-check-label" for="task4-hobby-sports">Sports</label>
               </div>
-
               <div class="form-check">
                 <input class="form-check-input" type="checkbox"
                        name="hobbies" id="task4-hobby-music" value="music">
                 <label class="form-check-label" for="task4-hobby-music">Music</label>
               </div>
-
               <div class="form-check">
                 <input class="form-check-input" type="checkbox"
                        name="hobbies" id="task4-hobby-travel" value="travel">
@@ -351,8 +300,7 @@
               </div>
             </fieldset>
           </div>
-
-          <div class="col-md-6 was-validated">
+          <div class="col-md-6">
             <label for="task4-country" class="form-label">Country</label>
             <select class="form-select" id="task4-country" name="country" required>
               <option value="" selected>Choose a country</option>
@@ -365,16 +313,35 @@
             <div class="valid-feedback">Looks good!</div>
             <div class="invalid-feedback">Please choose a country.</div>
           </div>
-
           <div class="col-12">
             <button type="submit" class="btn btn-primary">Submit</button>
             <button type="reset" class="btn btn-outline-secondary ms-2">Reset</button>
           </div>
-
         </div>
       </form>
     </section>
-
   </div>
+
+  <script>
+    (function () {
+      'use strict'
+      var forms = document.querySelectorAll('.needs-validation')
+      Array.prototype.slice.call(forms).forEach(function (form) {
+        form.addEventListener('submit', function (event) {
+          if (!form.checkValidity()) {
+            event.preventDefault()
+            event.stopPropagation()
+          }
+          form.classList.add('was-validated')
+
+          event.preventDefault()
+        }, false)
+
+        form.addEventListener('reset', function () {
+          form.classList.remove('was-validated')
+        })
+      })
+    })()
+  </script>
 </body>
 </html>
