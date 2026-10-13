@@ -10,12 +10,12 @@
 ## Part 2. Bootstrap Forms
 
 ### I styled the contact form using Bootstrap. I used the grid to place Name and Email next to each other on larger screens. On smaller screens, they appear one below the other. I added placeholders and helper text. Then, I used was-validated to show green or red feedback based on the input. I also added separate examples of the is-valid and is-invalid classes.
-<img width="1440" height="863" alt="image" src="https://github.com/user-attachments/assets/863fbda4-eb43-4f10-b6f7-74e2ab36f14b" />
+<img width="1440" height="861" alt="image" src="https://github.com/user-attachments/assets/c96b1c42-3842-478a-b1ed-a9a3bc1b0039" />
 
 ## Part 3. Advanced Form
 
 ### I created a registration form with name, email, password, and confirm password fields. I added radio buttons for gender, checkboxes for hobbies, and a dropdown for country. I used Bootstrap Grid to make the layout responsive. Required fields and password length are checked using HTML5 validation. Bootstrap shows error and success messages. The Reset button clears the form. The password fields check length only, not whether the passwords match.
-<img width="1440" height="855" alt="image" src="https://github.com/user-attachments/assets/a6ee8946-576e-456f-9600-74538035d30c" />
+<img width="1436" height="858" alt="image" src="https://github.com/user-attachments/assets/50e526a2-fe0c-460d-8139-f2209a7747e0" />
 
 ## Summary
 
